@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRAUMA TEAM | Acesso</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="auth-page">
+
+    <div class="auth-background-grid"></div>
+
+    <div class="auth-background-glow"></div>
+
+    <main class="auth-wrapper">
+
+        <section class="auth-card">
+
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <div class="auth-brand">
+
+
+                <a href="index.html" class="auth-brand-logo">
+
+                    <svg class="trauma-logo" viewBox="0 0 400 440" width="60" height="60" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-labelledby="traumaLogoTitle">
+                    
+                        <title id="traumaLogoTitle">
+                            Trauma Team
+                        </title>
+                    
+                        <defs>
+                    
+                            <style>
+                                .face {
+                                    fill: #9B1926;
+                                    stroke: #0C1725;
+                                    stroke-width: 5;
+                                    stroke-linejoin: miter;
+                                }
+                    
+                                .shadow {
+                                    fill: #0C1725;
+                                }
+                            </style>
+                    
+                        </defs>
+                    
+                        <polygon class="shadow" points="153,8 243,7 245,14 244,425 151,427 147,420 150,10" />
+                    
+                        <polygon class="face" points="146,1 236,0 237,418 145,420" />
+                    
+                        <polygon class="shadow" points="380,13 389,8 386,130 281,213 214,160 221,151" />
+                    
+                        <polygon class="face" points="380,13 209,142 204,150 271,202 377,122" />
+                    
+                        <polygon class="shadow" points="8,314 112,224 135,241 132,322 34,410 3,419 3,312" />
+                    
+                        <polygon class="face" points="110,220 1,305 0,408 29,394 126,313 128,236" />
+                    
+                        <polygon class="shadow" points="18,29 384,310 384,428 15,126 14,103" />
+                    
+                        <polygon class="face" points="11,20 378,307 378,420 8,118" />
+                    
+                    </svg>
+
+                </a>
+
+
+                <div class="auth-brand-name">
+
+                    <span class="auth-brand-title">
+                        TRAUMA TEAM
+                    </span>
+
+                    <span class="auth-brand-subtitle">
+                        INTERNATIONAL
+                    </span>
+
+                    <span class="auth-brand-medical">
+                        MEDICAL SERVICES
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="auth-system-line">
+
+                <span class="line"></span>
+
+                <span>
+                    SECURE MEDICAL NETWORK
+                </span>
+
+                <span class="line"></span>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HEADER DA AUTENTICAÇÃO
+            ================================================== -->
+
+            <div class="auth-heading">
+
+                <span class="auth-heading-code">
+                    ACCESS / AUTHENTICATION
+                </span>
+
+                <h1>
+                    ACESSO AO SISTEMA
+                </h1>
+
+                <p>
+                    Identifique-se para acessar os serviços
+                    médicos da Trauma Team.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ABAS
+            ================================================== -->
+
+            <div class="auth-tabs">
+
+                <button type="button" id="tabLogin" class="auth-tab active" onclick="mostrarLogin()">
+                    LOGIN
+                </button>
+
+
+                <button type="button" id="tabRegistro" class="auth-tab" onclick="mostrarRegistro()">
+                    REGISTRO
+                </button>
+
+            </div>
+
+            <div id="authMensagem" class="auth-message" role="alert"></div>
+
+
+
+            <!-- =================================================
+                 LOGIN
+            ================================================== -->
+
+            <form id="formLogin" onsubmit="realizarLogin(event)" novalidate>
+
+
+                <div class="auth-field">
+
+                    <label for="loginEmail">
+                        IDENTIFICAÇÃO
+                    </label>
+
+                    <div class="auth-input-wrapper">
+
+                        <span class="auth-input-code">
+                            //
+                        </span>
+
+                        <input type="email" id="loginEmail" placeholder="seu@email.com" autocomplete="email" required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="auth-field">
+
+                    <div class="auth-label-row">
+
+                        <label for="loginSenha">
+                            CREDENCIAL
+                        </label>
+
+                        <span>
+                            MIN. 6 CARACTERES
+                        </span>
+
+                    </div>
+
+
+                    <div class="auth-input-wrapper">
+
+                        <span class="auth-input-code">
+                            //
+                        </span>
+
+                        <input type="password" id="loginSenha" placeholder="••••••••" autocomplete="current-password"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <button type="submit" class="auth-submit">
+
+                    <span>
+                        AUTENTICAR USUÁRIO
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+            </form>
+
+
+
+            <!-- =================================================
+                 REGISTRO
+            ================================================== -->
+
+            <form id="formRegistro" onsubmit="realizarRegistro(event)" style="display:none;" novalidate>
+
+
+                <div class="auth-field">
+
+                    <label for="registroNome">
+                        IDENTIFICAÇÃO DO CLIENTE
+                    </label>
+
+                    <div class="auth-input-wrapper">
+
+                        <span class="auth-input-code">
+                            //
+                        </span>
+
+                        <input type="text" id="registroNome" placeholder="Nome completo" autocomplete="name" required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="auth-field">
+
+                    <label for="registroEmail">
+                        E-MAIL
+                    </label>
+
+                    <div class="auth-input-wrapper">
+
+                        <span class="auth-input-code">
+                            //
+                        </span>
+
+                        <input type="email" id="registroEmail" placeholder="seu@email.com" autocomplete="email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="auth-field">
+
+                    <div class="auth-label-row">
+
+                        <label for="registroSenha">
+                            NOVA CREDENCIAL
+                        </label>
+
+                        <span>
+                            MIN. 8 CARACTERES
+                        </span>
+
+                    </div>
+
+
+                    <div class="auth-input-wrapper">
+
+                        <span class="auth-input-code">
+                            //
+                        </span>
+
+                        <input type="password" id="registroSenha" placeholder="••••••••" autocomplete="new-password"
+                            minlength="8" required>
+
+                    </div>
+
+
+                    <ul id="senhaChecklist" class="password-checklist" aria-label="Requisitos da senha">
+
+                        <li data-password-rule="length">
+                            8 caracteres ou mais
+                        </li>
+
+                        <li data-password-rule="uppercase">
+                            Uma letra maiúscula
+                        </li>
+
+                        <li data-password-rule="lowercase">
+                            Uma letra minúscula
+                        </li>
+
+                        <li data-password-rule="number">
+                            Um número
+                        </li>
+
+                        <li data-password-rule="special">
+                            Um caractere especial
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <button type="submit" class="auth-submit">
+
+                    <span>
+                        REGISTRAR CLIENTE
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+            </form>
+
+            <div class="auth-status-panel">
+
+                <div class="auth-status-item">
+
+                    <span class="status-light"></span>
+
+                    <span>
+                        NETWORK
+                    </span>
+
+                    <strong>
+                        ONLINE
+                    </strong>
+
+                </div>
+
+
+                <div class="auth-status-item">
+
+                    <span>
+                        ENCRYPTION
+                    </span>
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <div class="auth-footer">
+
+                <a href="index.html">
+                    ← RETORNAR AO SITE
+                </a>
+
+                <span>
+                    TT / AUTH / 2077
+                </span>
+
+            </div>
+
+
+        </section>
+
+        <div class="auth-disclaimer">
+
+            <span>
+                TRAUMA TEAM INTERNATIONAL
+            </span>
+
+            <span>
+                EMERGENCY MEDICAL SERVICES
+            </span>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         TEMA
+    ====================================================== -->
+
+    <button id="themeToggle" class="auth-theme-toggle" type="button">
+        ◐ TEMA
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

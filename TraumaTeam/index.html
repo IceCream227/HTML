@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRAUMA TEAM | Emergency Medical Services</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header id="mainHeader" class="main-header">
+
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg">
+
+                <!-- LOGO -->
+
+                <a href="#inicio" class="navbar-brand trauma-brand js-scroll" aria-label="Trauma Team">
+                
+                    <svg class="trauma-logo" viewBox="0 0 400 440" width="60" height="60" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-labelledby="traumaLogoTitle">
+                
+                        <title id="traumaLogoTitle">
+                            Trauma Team
+                        </title>
+                
+                        <defs>
+                
+                            <style>
+                                .face {
+                                    fill: #9B1926;
+                                    stroke: #0C1725;
+                                    stroke-width: 5;
+                                    stroke-linejoin: miter;
+                                }
+                
+                                .shadow {
+                                    fill: #0C1725;
+                                }
+                            </style>
+                
+                        </defs>
+                                
+                        <polygon class="shadow" points="153,8 243,7 245,14 244,425 151,427 147,420 150,10" />
+                
+                        <polygon class="face" points="146,1 236,0 237,418 145,420" />
+                
+                        <polygon class="shadow" points="380,13 389,8 386,130 281,213 214,160 221,151" />
+                
+                        <polygon class="face" points="380,13 209,142 204,150 271,202 377,122" />
+                
+                        <polygon class="shadow" points="8,314 112,224 135,241 132,322 34,410 3,419 3,312" />
+                
+                        <polygon class="face" points="110,220 1,305 0,408 29,394 126,313 128,236" />
+                
+                        <polygon class="shadow" points="18,29 384,310 384,428 15,126 14,103" />
+                
+                        <polygon class="face" points="11,20 378,307 378,420 8,118" />
+                
+                    </svg>
+
+                </a>
+
+
+                <!-- BOTÃO MOBILE -->
+
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+                <!-- ITENS DO HEADER -->
+
+                <div class="collapse navbar-collapse" id="mainNavigation">
+
+                    <ul class="navbar-nav mx-auto navigation-links">
+
+                        <li class="nav-item">
+
+                            <a class="nav-link active js-scroll" href="#inicio">
+                                INÍCIO
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link js-scroll" href="#servicos">
+                                SERVIÇOS
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link js-scroll" href="#planos">
+                                PLANOS
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link js-scroll" href="#sobre">
+                                SOBRE
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link js-scroll" href="#contato">
+                                CONTATO
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+
+                    <!-- ÁREA DO USUÁRIO -->
+
+                    <div class="header-user-area">
+
+                        <div id="statusUsuario" class="user-status">
+                            <span class="status-dot"></span>
+
+                            VISITANTE
+                        </div>
+
+
+                        <a href="auth.html" id="btnConta" class="header-account-button">
+                            ACESSAR CONTA
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CARROSSEL
+    ====================================================== -->
+
+    <main>
+
+        <section id="inicio" class="hero-section">
+
+
+            <!-- CARROSSEL DE FUNDO -->
+
+            <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+
+                <div class="carousel-inner">
+
+
+                    <!-- SLIDE 01 -->
+
+                    <div class="carousel-item active">
+
+                        <div class="hero-background hero-background-01">
+
+                            <div class="hero-image-placeholder">
+
+                                <div class="hero-background hero-background-01"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SLIDE 02 -->
+
+                    <div class="carousel-item">
+
+                        <div class="hero-background hero-background-02">
+
+                            <div class="hero-image-placeholder">
+
+                                <div class="hero-background hero-background-02"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SLIDE 03 -->
+
+                    <div class="carousel-item">
+
+                        <div class="hero-background hero-background-03">
+
+                            <div class="hero-image-placeholder">
+
+                                <div class="hero-background hero-background-03"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-overlay"></div>
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="container hero-content">
+
+                <div class="row">
+
+                    <div class="col-lg-8">
+
+                        <div class="hero-system-line">
+
+                            <span></span>
+
+                            TRAUMA TEAM INTERNATIONAL
+
+                        </div>
+
+
+                        <span class="hero-tag">
+
+                            EMERGENCY MEDICAL SERVICES
+
+                        </span>
+
+
+                        <h1>
+
+                            QUANDO CADA<br>
+
+                            <span>SEGUNDO</span>
+
+                            IMPORTA.
+
+                        </h1>
+
+
+                        <p class="hero-description">
+
+                            Atendimento médico de emergência
+                            de última geração, com resposta rápida
+                            e tecnologia desenvolvida para situações
+                            onde esperar não é uma opção.
+
+                        </p>
+
+
+                        <div class="hero-buttons">
+
+                            <a href="#planos" class="btn btn-trauma-red js-scroll">
+                                ESCOLHER PLANO
+                            </a>
+
+
+                            <a href="#servicos" class="btn btn-trauma-light js-scroll">
+                                CONHECER SERVIÇOS
+                            </a>
+
+                        </div>
+
+
+                        <div class="hero-status">
+
+                            <span class="live-indicator"></span>
+
+                            SISTEMA OPERACIONAL
+
+                            <strong>
+                                ONLINE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INDICADORES -->
+
+            <div class="hero-carousel-indicators">
+
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-label="Slide 1"></button>
+
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+            </div>
+
+
+        </section>
+
+        <section class="data-strip">
+
+            <div class="container">
+
+                <div class="row g-0">
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="data-item">
+
+                            <span class="data-label">
+                                DISPONIBILIDADE
+                            </span>
+
+                            <strong>
+                                24 / 7
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="data-item">
+
+                            <span class="data-label">
+                                TEMPO DE RESPOSTA
+                            </span>
+
+                            <strong>
+                                &lt; 03 MIN
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="data-item">
+
+                            <span class="data-label">
+                                UNIDADES MÉDICAS
+                            </span>
+
+                            <strong>
+                                1.247
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="data-item">
+
+                            <span class="data-label">
+                                STATUS
+                            </span>
+
+                            <strong class="data-online">
+                                ONLINE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVIÇOS
+        ====================================================== -->
+
+        <section id="servicos" class="section-section">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="section-index">
+                        01 / SERVIÇOS
+                    </div>
+
+                    <span class="section-tag">
+                        MEDICAL RESPONSE
+                    </span>
+
+                    <h2>
+                        PREPARADOS PARA
+                        O <span>PIOR.</span>
+                    </h2>
+
+                    <p>
+                        Nossa estrutura médica foi desenvolvida
+                        para situações em que velocidade, precisão
+                        e tecnologia fazem toda a diferença.
+                    </p>
+
+                </div>
+
+
+
+                <div class="row g-4">
+
+
+                    <!-- SERVIÇO 01 -->
+
+                    <div class="col-lg-4">
+
+                        <article class="service-card">
+
+                            <div class="service-card-number">
+                                01
+                            </div>
+
+
+                            <div class="service-image-placeholder">
+                            
+                                <img src="images/servico-01.jpg" alt="Resgate médico">
+                            
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <span class="service-tag">
+                                    RESPONSE UNIT
+                                </span>
+
+                                <h3>
+                                    RESGATE MÉDICO
+                                </h3>
+
+                                <p>
+                                    Unidades de resposta preparadas
+                                    para chegar ao paciente em situações
+                                    críticas.
+                                </p>
+
+                                <a href="#contato" class="service-link js-scroll">
+                                    SAIBA MAIS
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- SERVIÇO 02 -->
+
+                    <div class="col-lg-4">
+
+                        <article class="service-card">
+
+                            <div class="service-card-number">
+                                02
+                            </div>
+
+
+                            <div class="service-image-placeholder">
+                            
+                                <img src="images/servico-02.jpg" alt="Trauma avançado">
+                            
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <span class="service-tag">
+                                    TRAUMA UNIT
+                                </span>
+
+                                <h3>
+                                    TRAUMA AVANÇADO
+                                </h3>
+
+                                <p>
+                                    Tratamentos especializados para
+                                    traumas graves e situações médicas
+                                    de alta complexidade.
+                                </p>
+
+                                <a href="#contato" class="service-link js-scroll">
+                                    SAIBA MAIS
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- SERVIÇO 03 -->
+
+                    <div class="col-lg-4">
+
+                        <article class="service-card">
+
+                            <div class="service-card-number">
+                                03
+                            </div>
+
+
+                            <div class="service-image-placeholder">
+                            
+                                <img src="images/servico-03.jpg" alt="Suporte médico">
+                            
+                            </div>
+
+
+                            <div class="service-content">
+
+                                <span class="service-tag">
+                                    MEDICAL SUPPORT
+                                </span>
+
+                                <h3>
+                                    SUPORTE CONTÍNUO
+                                </h3>
+
+                                <p>
+                                    Monitoramento e suporte médico
+                                    especializado quando você mais
+                                    precisa.
+                                </p>
+
+                                <a href="#contato" class="service-link js-scroll">
+                                    SAIBA MAIS
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PLANOS
+        ====================================================== -->
+
+        <section id="planos" class="plans-section">
+
+            <div class="container">
+
+
+                <div class="section-heading plans-heading">
+
+                    <div class="section-index">
+                        02 / PLANOS
+                    </div>
+
+                    <span class="section-tag">
+                        MEDICAL COVERAGE
+                    </span>
+
+                    <h2>
+                        SELECIONE SUA
+                        <span>COBERTURA.</span>
+                    </h2>
+
+                    <p>
+                        Escolha o nível de atendimento adequado
+                        ao seu perfil.
+                    </p>
+
+                </div>
+
+
+
+                <div class="row g-4">
+
+
+                    <!-- BASIC -->
+
+                    <div class="col-lg-4">
+
+                        <article class="plan-card">
+
+
+                            <div class="plan-top">
+
+                                <div>
+
+                                    <span class="plan-code">
+                                        TT / 001
+                                    </span>
+
+                                    <h3>
+                                        BASIC
+                                    </h3>
+
+                                </div>
+
+                                <span class="plan-class">
+                                    CLASS I
+                                </span>
+
+                            </div>
+
+
+                            <p class="plan-description">
+                                Cobertura essencial para situações
+                                emergenciais.
+                            </p>
+
+
+                            <div class="plan-price">
+
+                                <small>
+                                    €
+                                </small>
+
+                                <strong>
+                                    500
+                                </strong>
+
+                                <span>
+                                    / MÊS
+                                </span>
+
+                            </div>
+
+
+                            <div class="plan-divider"></div>
+
+
+                            <ul class="plan-features">
+
+                                <li>
+                                    <span>+</span>
+                                    Atendimento emergencial
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Transporte médico
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Primeiros socorros
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Suporte 24/7
+                                </li>
+
+                            </ul>
+
+
+                            <button class="btn btn-plan" type="button" onclick="abrirModalPlano('Basic', 500)">
+                                CONTRATAR
+                            </button>
+
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- PREMIUM -->
+
+                    <div class="col-lg-4">
+
+                        <article class="plan-card plan-featured">
+
+
+                            <div class="featured-line">
+                                RECOMENDADO
+                            </div>
+
+
+                            <div class="plan-top">
+
+                                <div>
+
+                                    <span class="plan-code">
+                                        TT / 002
+                                    </span>
+
+                                    <h3>
+                                        PREMIUM
+                                    </h3>
+
+                                </div>
+
+                                <span class="plan-class">
+                                    CLASS II
+                                </span>
+
+                            </div>
+
+
+                            <p class="plan-description">
+                                Cobertura avançada para situações
+                                de maior risco.
+                            </p>
+
+
+                            <div class="plan-price">
+
+                                <small>
+                                    €
+                                </small>
+
+                                <strong>
+                                    1.200
+                                </strong>
+
+                                <span>
+                                    / MÊS
+                                </span>
+
+                            </div>
+
+
+                            <div class="plan-divider"></div>
+
+
+                            <ul class="plan-features">
+
+                                <li>
+                                    <span>+</span>
+                                    Todos os benefícios Basic
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Atendimento prioritário
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Cirurgia emergencial
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Trauma avançado
+                                </li>
+
+                            </ul>
+
+
+                            <button class="btn btn-plan btn-plan-primary" type="button"
+                                onclick="abrirModalPlano('Premium', 1200)">
+                                CONTRATAR
+                            </button>
+
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- EXECUTIVE -->
+
+                    <div class="col-lg-4">
+
+                        <article class="plan-card">
+
+
+                            <div class="plan-top">
+
+                                <div>
+
+                                    <span class="plan-code">
+                                        TT / 003
+                                    </span>
+
+                                    <h3>
+                                        EXECUTIVE
+                                    </h3>
+
+                                </div>
+
+                                <span class="plan-class">
+                                    CLASS III
+                                </span>
+
+                            </div>
+
+
+                            <p class="plan-description">
+                                Cobertura máxima e atendimento
+                                de prioridade elevada.
+                            </p>
+
+
+                            <div class="plan-price">
+
+                                <small>
+                                    €
+                                </small>
+
+                                <strong>
+                                    3.500
+                                </strong>
+
+                                <span>
+                                    / MÊS
+                                </span>
+
+                            </div>
+
+
+                            <div class="plan-divider"></div>
+
+
+                            <ul class="plan-features">
+
+                                <li>
+                                    <span>+</span>
+                                    Todos os benefícios Premium
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Resgate prioritário
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Equipe médica dedicada
+                                </li>
+
+                                <li>
+                                    <span>+</span>
+                                    Cobertura máxima
+                                </li>
+
+                            </ul>
+
+
+                            <button class="btn btn-plan" type="button" onclick="abrirModalPlano('Executive', 3500)">
+                                CONTRATAR
+                            </button>
+
+
+                        </article>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
+
+        <section id="sobre" class="section-section about-section">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+
+                    <div class="col-lg-6">
+
+                        <div class="about-image-placeholder">
+                        
+                            <div class="placeholder-corners"></div>
+                        
+                            <img src="images/sobre.jpg" alt="Trauma Team">
+                        
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-6">
+
+                        <div class="section-index">
+                            03 / TRAUMA TEAM
+                        </div>
+
+                        <span class="section-tag">
+                            ABOUT US
+                        </span>
+
+                        <h2>
+                            NÃO VENDEMOS
+                            <span>ESPERANÇA.</span>
+                        </h2>
+
+                        <p>
+                            Vendemos a possibilidade de continuar
+                            vivo quando tudo indica o contrário.
+                        </p>
+
+                        <p>
+                            Nossa tecnologia médica, unidades de
+                            resposta e profissionais especializados
+                            trabalham juntos para oferecer atendimento
+                            rápido e eficiente.
+                        </p>
+
+
+                        <div class="about-stat">
+
+                            <div>
+
+                                <strong>
+                                    99.7%
+                                </strong>
+
+                                <span>
+                                    MISSÕES CONCLUÍDAS
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    24/7
+                                </strong>
+
+                                <span>
+                                    OPERAÇÃO
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="contato" class="contact-section">
+
+            <div class="container">
+
+                <div class="contact-content">
+
+                    <span class="section-tag">
+                        TRAUMA TEAM INTERNATIONAL
+                    </span>
+
+                    <h2>
+                        SUA VIDA.
+                        <br>
+                        NOSSO <span>TRABALHO.</span>
+                    </h2>
+
+                    <p>
+                        Esteja preparado antes que a emergência
+                        comece.
+                    </p>
+
+
+                    <a href="#planos" class="btn btn-contact js-scroll">
+                        ADQUIRIR PLANO
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+
+                    <div class="footer-brand">
+                        TRAUMA TEAM
+                    </div>
+
+                    <span class="footer-subtitle">
+                        INTERNATIONAL MEDICAL SERVICES
+                    </span>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="footer-links">
+
+                        <a href="#inicio" class="js-scroll">
+                            INÍCIO
+                        </a>
+
+                        <a href="#servicos" class="js-scroll">
+                            SERVIÇOS
+                        </a>
+
+                        <a href="#planos" class="js-scroll">
+                            PLANOS
+                        </a>
+
+                        <a href="auth.html">
+                            CONTA
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2077 TRAUMA TEAM INTERNATIONAL
+                </span>
+
+
+                <button id="themeToggle" class="theme-toggle" type="button" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="Alterar tema">
+                    ◐ TEMA
+                </button>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MODAL DE PERFIL
+    ====================================================== -->
+
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content trauma-modal">
+
+                <div class="modal-header">
+
+                    <span class="modal-system">
+                        IDENTITY / PROFILE
+                    </span>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+
+                </div>
+
+
+                <div class="modal-body profile-modal-body">
+
+                    <div class="profile-heading">
+
+                        <div class="profile-avatar" aria-hidden="true">
+                            <span id="profileInitials">TT</span>
+                        </div>
+
+                        <div>
+
+                            <span class="modal-plan-code">
+                                TRAUMA TEAM CLIENT
+                            </span>
+
+                            <h3 id="profileName">
+                                —
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-data-grid">
+
+                        <div class="profile-data-item">
+                            <span>IDENTIFICAÇÃO</span>
+                            <strong id="profileEmail">—</strong>
+                        </div>
+
+                        <div class="profile-data-item">
+                            <span>STATUS DA CONTA</span>
+                            <strong class="profile-online">ATIVA</strong>
+                        </div>
+
+                        <div class="profile-data-item">
+                            <span>ID DO CLIENTE</span>
+                            <strong id="profileId">—</strong>
+                        </div>
+
+                        <div class="profile-data-item">
+                            <span>PLANO ATUAL</span>
+                            <strong id="profilePlan">NENHUM</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer profile-modal-footer">
+
+                    <button type="button" class="btn modal-secondary" data-bs-dismiss="modal">
+                        FECHAR
+                    </button>
+
+                    <button type="button" class="btn btn-trauma-red" id="profileLogoutButton">
+                        ENCERRAR SESSÃO
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MODAL DE AUTENTICAÇÃO
+    ====================================================== -->
+
+    <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content trauma-modal">
+
+                <div class="modal-header">
+
+                    <span class="modal-system">
+                        SECURITY / 401
+                    </span>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <div class="modal-icon">
+                        !
+                    </div>
+
+                    <h3>
+                        AUTENTICAÇÃO NECESSÁRIA
+                    </h3>
+
+                    <p>
+                        Uma conta Trauma Team é necessária
+                        para contratar um plano médico.
+                    </p>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn modal-secondary" data-bs-dismiss="modal">
+                        CANCELAR
+                    </button>
+
+                    <a href="auth.html" id="loginRequiredButton" class="btn btn-trauma-red">
+                        ACESSAR CONTA
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MODAL DE COMPRA
+    ====================================================== -->
+
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content trauma-modal">
+
+                <div class="modal-header">
+
+                    <span class="modal-system">
+                        CONTRACT / MEDICAL PLAN
+                    </span>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <span class="modal-plan-code">
+                        TRAUMA TEAM
+                    </span>
+
+                    <h3 id="modalPlanName">
+                        PREMIUM
+                    </h3>
+
+
+                    <div class="modal-price">
+
+                        <span>
+                            €
+                        </span>
+
+                        <strong id="modalPlanPrice">
+                            1.200
+                        </strong>
+
+                        <small>
+                            / MÊS
+                        </small>
+
+                    </div>
+
+
+                    <div class="modal-user">
+
+                        <span>
+                            CLIENTE
+                        </span>
+
+                        <strong id="modalUserName">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn modal-secondary" data-bs-dismiss="modal">
+                        CANCELAR
+                    </button>
+
+                    <button type="button" class="btn btn-trauma-red" id="confirmPurchaseButton">
+                        CONFIRMAR CONTRATO
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MODAL DE SUCESSO
+    ====================================================== -->
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content trauma-modal">
+
+                <div class="modal-header">
+
+                    <span class="modal-system">
+                        SYSTEM / 200
+                    </span>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+
+                </div>
+
+
+                <div class="modal-body text-center">
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        CONTRATO ATIVADO
+                    </h3>
+
+                    <p>
+                        Seu plano Trauma Team foi ativado
+                        com sucesso.
+                    </p>
+
+                    <div id="successPlanName" class="success-plan">
+                        PREMIUM
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-trauma-red" data-bs-dismiss="modal">
+                        FINALIZAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="traumaToast" class="toast trauma-toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-header">
+
+                <span class="toast-system">
+                    TRAUMA TEAM
+                </span>
+
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+
+            </div>
+
+            <div id="toastMessage" class="toast-body">
+                Sistema atualizado.
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
