@@ -1,350 +1,387 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Informação e acolhimento para a saúde da mulher durante o Outubro Rosa.">
-  <title>Outubro Rosa | Cuidado que salva vidas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <style>
-    :root { --ink:#31252a; --muted:#76676c; --rose:#b83362; --rose-dark:#762443; --rose-soft:#f8e9ec; --cream:#fffaf8; --mint:#d7f0e4; --green:#166452; --line:#eadcdf; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans', sans-serif; font-size:14px; line-height:1.55; }
-    a { color:inherit; text-decoration:none; }
-    .wrap { width:min(1120px, calc(100% - 48px)); margin:auto; }
-    .topbar { border-bottom:1px solid var(--line); background:rgba(255,250,248,.92); }
-    .nav { height:78px; display:flex; align-items:center; gap:40px; }
-    .brand { display:flex; align-items:center; gap:11px; color:var(--rose); font-family:Georgia, serif; font-size:17px; line-height:1.1; }
-    .brand small { display:block; font:10px 'DM Sans', sans-serif; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); }
-    .ribbon { width:34px; height:34px; border:5px solid var(--rose); border-radius:50% 50% 50% 8px; transform:rotate(-45deg); position:relative; }
-    .ribbon:after { content:''; position:absolute; width:10px; height:25px; border-left:5px solid var(--rose); border-bottom:5px solid var(--rose); left:9px; top:13px; }
-    .nav-links { display:flex; gap:27px; margin-left:auto; color:var(--muted); font-size:12px; }
-    .nav-links a:hover { color:var(--rose); }
-    .help { border:1px solid var(--green); border-radius:20px; padding:9px 15px; color:var(--green); font-size:11px; font-weight:700; }
-    .hero { padding:52px 0 65px; background:linear-gradient(115deg, #fffaf8 0%, #fff5f5 70%, #f8eaed 100%); }
-    .hero-grid { display:grid; grid-template-columns:1fr .82fr; align-items:center; gap:76px; }
-    .eyebrow { color:var(--rose); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-    h1,h2,h3,p { margin-top:0; }
-    h1,h2 { font-family:'Playfair Display', Georgia, serif; font-weight:500; line-height:1.12; }
-    h1 { font-size:clamp(42px, 5vw, 68px); max-width:610px; margin:13px 0 20px; }
-    h1 em,h2 em { color:var(--rose); font-weight:500; }
-    .hero-copy { color:var(--muted); max-width:490px; }
-    .actions { display:flex; gap:12px; align-items:center; margin-top:28px; }
-    .btn { border:0; border-radius:22px; padding:12px 18px; font:700 11px 'DM Sans'; cursor:pointer; }
-    .btn-primary { background:var(--rose); color:#fff; box-shadow:0 7px 18px #b8336230; }
-    .btn-light { background:#fff; color:var(--green); border:1px solid #d7e9e0; }
-    .hero-stats { display:grid; grid-template-columns:repeat(3,1fr); margin-top:38px; border-top:1px solid var(--line); padding-top:15px; }
-    .stat strong { display:block; color:var(--rose); font:600 24px Georgia, serif; }
-    .stat span { display:block; color:var(--muted); font-size:10px; max-width:100px; }
-    .hero-photo { position:relative; }
-    .hero-photo img { width:100%; height:440px; object-fit:cover; border-radius:16px 16px 70px 16px; display:block; box-shadow:18px 18px 0 #f4dce2; }
-    .photo-note { position:absolute; bottom:18px; left:-18px; right:26px; background:#fff; padding:12px 16px; border-radius:10px; box-shadow:0 7px 25px #6d3c4d25; font-size:11px; }
-    .photo-note b { color:var(--green); display:block; }
-    .section { padding:80px 0; }
-    .section.alt { background:#fbf0f1; }
-    .section-heading { max-width:600px; margin-bottom:34px; }
-    h2 { font-size:clamp(30px, 4vw, 44px); margin:10px 0 14px; }
-    .section-heading p { color:var(--muted); font-size:13px; }
-    .intro-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:70px; align-items:start; }
-    .intro-grid .section-heading { margin-bottom:0; }
-    .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
-    .card { background:#fffafa; border:1px solid #f0e2e5; border-radius:9px; padding:21px; min-height:180px; }
-    .card .icon { color:var(--rose); background:#fae1e8; width:28px; height:28px; display:grid; place-items:center; border-radius:7px; font-size:14px; margin-bottom:17px; }
-    .card h3 { font:600 15px Georgia, serif; margin-bottom:8px; }
-    .card p { color:var(--muted); font-size:11px; margin-bottom:0; }
-    .tip { border-left:3px solid var(--rose); padding:14px 18px; background:#fff; margin-top:20px; font-size:11px; color:var(--muted); }
-    .signs { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
-    .sign { background:#fff8f8; border:1px solid #f0e2e5; border-radius:8px; padding:17px; min-height:155px; }
-    .sign b { display:block; margin:12px 0 5px; font:600 13px Georgia, serif; }
-    .sign p { color:var(--muted); font-size:10px; }
-    .sign small { color:var(--rose); font-size:9px; text-transform:uppercase; font-weight:700; }
-    .quote { display:grid; grid-template-columns:1.5fr .8fr; gap:24px; background:#fff; border-radius:10px; padding:22px 25px; margin:0 0 65px; border:1px solid #f0e2e5; }
-    .quote p { font:italic 16px Georgia, serif; margin:8px 0 0; }
-    .quote span { color:var(--muted); font-size:11px; }
-    .faq-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }
-    details { background:#fff; border:1px solid #f0e2e5; padding:17px 20px; border-radius:8px; }
-    summary { cursor:pointer; font:600 14px Georgia, serif; list-style:none; }
-    summary:after { content:'+'; float:right; color:var(--rose); font:20px 'DM Sans'; }
-    details[open] summary:after { content:'−'; }
-    details p { color:var(--muted); font-size:11px; margin:15px 0 0; }
-    .service { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; }
-    .service-list { display:grid; gap:11px; }
-    .service-item { display:flex; gap:12px; background:#fff; border:1px solid #f0e2e5; border-radius:8px; padding:13px; font-size:11px; color:var(--muted); }
-    .service-item b { display:block; color:var(--ink); margin-bottom:2px; }
-    .search-box { background:var(--green); padding:27px; border-radius:11px; color:#fff; }
-    .search-box h3 { font:500 27px Georgia, serif; margin-bottom:8px; }
-    .search-box p { color:#cae7db; font-size:12px; }
-    .search { display:flex; background:#fff; border-radius:22px; padding:4px; margin-top:22px; }
-    .search input { min-width:0; flex:1; border:0; padding:10px 13px; outline:0; font:11px 'DM Sans'; }
-    .search button { border:0; background:var(--rose); color:#fff; border-radius:18px; padding:0 18px; font:700 10px 'DM Sans'; cursor:pointer; }
-    .closing { text-align:center; padding:80px 0; }
-    .closing h2 { max-width:520px; margin:10px auto 16px; }
-    .closing p { color:var(--muted); font-size:12px; max-width:520px; margin:0 auto 23px; }
-    footer { background:#fff; border-top:1px solid var(--line); padding:42px 0 22px; }
-    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:50px; }
-    footer h3 { font:18px Georgia, serif; color:var(--rose); }
-    footer p, footer a { display:block; color:var(--muted); font-size:11px; margin:7px 0; }
-    .copyright { border-top:1px solid var(--line); margin-top:30px; padding-top:15px; color:#a7959a; font-size:10px; }
-    @media (max-width:760px) { .wrap { width:min(100% - 30px, 560px); } .nav { height:auto; padding:18px 0; flex-wrap:wrap; gap:15px; } .nav-links { order:3; width:100%; justify-content:space-between; gap:8px; } .help { margin-left:auto; } .hero { padding:42px 0 60px; } .hero-grid,.intro-grid,.service,.quote { grid-template-columns:1fr; gap:35px; } .hero-photo img { height:350px; } .photo-note { left:12px; right:12px; } .card-grid,.signs { grid-template-columns:1fr 1fr; } .section { padding:60px 0; } .faq-grid { grid-template-columns:1fr; } .footer-grid { grid-template-columns:1fr 1fr; gap:20px; } .footer-grid > :first-child { grid-column:1 / -1; } }
-    @media (max-width:430px) { h1 { font-size:42px; } .actions { flex-wrap:wrap; } .hero-stats { gap:8px; } .card-grid,.signs { grid-template-columns:1fr; } .sign { min-height:120px; } .footer-grid { grid-template-columns:1fr; } }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#fff8f8">
+	<meta name="description" content="Informação e cuidado para a prevenção do câncer de mama.">
+	<title>Outubro Rosa | Informação também é cuidado</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+	<style>
+		:root {
+			--rose-50: #fff8f8;
+			--rose-100: #f9eeee;
+			--rose-200: #f1dfe2;
+			--rose-400: #dd8294;
+			--rose-600: #b94261;
+			--ink: #342b2d;
+			--muted: #786e70;
+			--green: #286957;
+			--green-light: #d8eee6;
+			--paper: #fffdfc;
+			--serif: "Playfair Display", Georgia, serif;
+			--sans: "DM Sans", sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; color: var(--ink); background: var(--rose-50); font-family: var(--sans); font-size: 14px; }
+		a { color: inherit; }
+		.site-header { min-height: 70px; border-bottom: 1px solid rgba(90, 50, 60, .08); background: rgba(255, 253, 252, .94); }
+		.navbar-brand { color: var(--rose-600); font-family: var(--serif); font-size: 21px; line-height: 1; }
+		.brand-caption { display: block; margin-top: 5px; color: var(--muted); font: 600 8px var(--sans); letter-spacing: 1.1px; text-transform: uppercase; }
+		.nav-link { color: #67595c; font-size: 12px; font-weight: 600; }
+		.nav-link:hover, .nav-link:focus { color: var(--rose-600); }
+		.btn-rose, .btn-green { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 39px; padding: 0 17px; border: 0; border-radius: 999px; color: white; font-size: 11px; font-weight: 700; text-decoration: none; transition: transform .2s, filter .2s; }
+		.btn-rose { background: var(--rose-600); }
+		.btn-green { background: var(--green); }
+		.btn-rose:hover, .btn-green:hover { color: white; filter: brightness(1.08); transform: translateY(-1px); }
+		.btn-soft { display: inline-flex; align-items: center; gap: 7px; padding: 10px 16px; border-radius: 999px; background: var(--rose-100); color: var(--rose-600); font-size: 11px; font-weight: 700; text-decoration: none; }
+		.eyebrow { display: inline-flex; align-items: center; gap: 7px; color: var(--rose-600); font-size: 9px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+		.eyebrow::before { width: 14px; height: 1px; background: currentColor; content: ""; }
+		h1, h2, h3, .serif { font-family: var(--serif); }
+		h1 { max-width: 580px; margin: 15px 0 16px; font-size: clamp(38px, 5vw, 62px); font-weight: 500; line-height: 1.08; }
+		h1 em { color: var(--rose-600); font-weight: 500; }
+		h2 { margin: 10px 0 12px; font-size: clamp(25px, 3vw, 34px); line-height: 1.16; }
+		h3 { font-size: 17px; line-height: 1.25; }
+		.body-copy { max-width: 540px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+		.hero { padding: 62px 0 58px; background: radial-gradient(ellipse at 92% 8%, #f7e8e9 0, transparent 35%), var(--rose-50); }
+		.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 23px; }
+		.hero-image { min-height: 390px; height: 100%; border-radius: 14px; background: linear-gradient(155deg, #f6e8e8, #f0dddd); }
+		.image-slot { position: relative; overflow: hidden; }
+		.image-slot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+		.image-note { position: absolute; right: 13px; bottom: 13px; left: 13px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid rgba(80, 55, 60, .08); border-radius: 9px; background: rgba(255, 253, 252, .95); box-shadow: 0 7px 22px rgba(77, 40, 52, .08); }
+		.image-note i { color: var(--green); font-size: 18px; }
+		.image-note strong, .image-note span { display: block; }
+		.image-note strong { font-size: 10px; }
+		.image-note span { margin-top: 2px; color: var(--muted); font-size: 9px; }
+		.stats-row { display: flex; flex-wrap: wrap; gap: 0; margin-top: 32px; border-top: 1px solid var(--rose-200); }
+		.stat { flex: 1 1 125px; padding: 16px 14px 0 0; }
+		.stat strong { display: block; color: var(--rose-600); font-family: var(--serif); font-size: 24px; font-weight: 600; }
+		.stat span { display: block; max-width: 140px; margin-top: 5px; color: var(--muted); font-size: 9px; line-height: 1.5; }
+		.section { padding: 66px 0; }
+		.section-tint { background: #fbf1f2; }
+		.section-white { background: #fffafa; }
+		#prevencao { position: relative; isolation: isolate; overflow: hidden; background: #fbf1f2; }
+		.prevention-carousel-layer { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+		.prevention-carousel-layer::after { position: absolute; inset: 0; background: rgba(255, 248, 248, .88); content: ""; }
+		.prevention-carousel, .prevention-carousel .carousel-inner, .prevention-carousel .carousel-item { height: 100%; }
+		.prevention-carousel img { display: block; width: 100%; height: 100%; object-fit: cover; filter: blur(7px); transform: scale(1.05); }
+		#prevencao > .container { position: relative; z-index: 1; }
+		.section-intro { max-width: 670px; margin-bottom: 28px; }
+		.section-intro .body-copy { margin-bottom: 0; }
+		.topic-card { height: 100%; padding: 20px 18px; border: 1px solid rgba(106, 65, 74, .06); border-radius: 9px; background: var(--paper); }
+		.icon-box { display: grid; width: 36px; height: 36px; place-items: center; margin-bottom: 14px; border-radius: 9px; background: #f9e6e9; color: var(--rose-600); font-size: 16px; }
+		.icon-box.green { background: var(--green-light); color: var(--green); }
+		.topic-card p, .symptom-card p, .step-card p, .resource-card p { margin: 8px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+		.card-kicker { display: block; margin-top: 14px; color: var(--rose-600); font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+		.callout { display: flex; align-items: flex-start; gap: 12px; margin-top: 17px; padding: 15px 17px; border: 1px solid var(--rose-200); border-radius: 8px; background: #fffafa; }
+		.callout i { color: var(--rose-600); font-size: 16px; }
+		.callout p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.65; }
+		.symptom-card { min-height: 185px; padding: 18px 16px; border-radius: 9px; background: #fffafa; box-shadow: 0 5px 18px rgba(75, 41, 50, .035); }
+		.symptom-card .icon-box { width: 30px; height: 30px; margin-bottom: 13px; }
+		.symptom-card h3 { margin: 0; font-size: 15px; }
+		.notice-line { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 9px; }
+		.notice-line i { color: var(--rose-600); }
+		.exam-section { padding: 55px 0; background: #fbf1f2; }
+		.exam-intro { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 25px; }
+		.exam-intro .body-copy { max-width: 530px; margin-bottom: 0; }
+		.step-card { height: 100%; min-height: 246px; padding: 19px; border: 1px solid rgba(125, 70, 83, .07); border-radius: 10px; background: #fffafa; }
+		.step-number { display: grid; width: 30px; height: 30px; place-items: center; margin-bottom: 14px; border-radius: 50%; background: var(--green); color: white; font-family: var(--serif); font-size: 15px; }
+		.step-card h3 { margin: 0; }
+		.step-foot { display: block; margin-top: 15px; color: var(--green); font-size: 8px; }
+		.exam-banner { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 14px; padding: 16px 18px; border-radius: 9px; background: #f4e7e9; }
+		.exam-banner-copy { display: flex; align-items: center; gap: 12px; }
+		.exam-banner-copy i { color: var(--rose-600); font-size: 19px; }
+		.exam-banner-copy strong { display: block; font-size: 11px; }
+		.exam-banner-copy span { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
+		.myth-card { height: 100%; padding: 20px; border: 1px solid rgba(106, 65, 74, .07); border-radius: 9px; background: var(--paper); }
+		.tag { display: inline-block; padding: 5px 8px; border-radius: 999px; background: #f9e6e9; color: var(--rose-600); font-size: 8px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+		.tag.true { background: var(--green-light); color: var(--green); }
+		.myth-card h3 { margin: 13px 0 8px; font-size: 17px; }
+		.myth-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.75; }
+		.myth-source { display: block; margin-top: 16px; color: var(--green); font-size: 8px; }
+		.access-section { padding: 62px 0; background: #fbf1f2; }
+		.resource-card { height: 100%; padding: 19px; border-radius: 9px; background: #fffafa; }
+		.resource-card h3 { margin: 0; font-size: 16px; }
+		.resource-card a { display: inline-block; margin-top: 13px; color: var(--green); font-size: 9px; font-weight: 700; text-decoration: none; }
+		.resource-card a:hover { text-decoration: underline; }
+		.resource-list { margin: 17px 0 0; padding: 0; list-style: none; }
+		.resource-list li { display: flex; gap: 9px; padding: 8px 0; border-top: 1px solid var(--rose-100); color: var(--muted); font-size: 9px; line-height: 1.5; }
+		.resource-list i { color: var(--green); }
+		.clinic-panel { height: 100%; padding: 20px; border-radius: 10px; background: var(--green); color: white; }
+		.clinic-panel .eyebrow { color: #c2e7d9; }
+		.clinic-panel h3 { margin: 10px 0 8px; font-size: 23px; }
+		.clinic-panel p { color: rgba(255,255,255,.79); font-size: 10px; line-height: 1.7; }
+		.clinic-form { display: flex; gap: 8px; margin-top: 17px; }
+		.clinic-form .form-control { min-width: 0; border: 0; border-radius: 999px; font-size: 10px; }
+		.clinic-form .btn { flex: 0 0 auto; border-radius: 999px; background: #e68b9e; color: white; font-size: 10px; font-weight: 700; }
+		.form-feedback { min-height: 15px; margin-top: 8px; color: #e0f2ea; font-size: 9px; }
+		.closing { padding: 55px 0; text-align: center; background: #fffafa; }
+		.closing .icon-box { margin: 0 auto 15px; }
+		.closing h2 { max-width: 570px; margin: 0 auto 12px; font-size: 29px; }
+		.closing p { max-width: 580px; margin: 0 auto 19px; color: var(--muted); font-size: 10px; line-height: 1.8; }
+		footer { padding: 30px 0 17px; background: #fbf1f2; }
+		.footer-title { margin-bottom: 8px; color: var(--rose-600); font-family: var(--serif); font-size: 19px; }
+		.footer-copy, .footer-links a { color: var(--muted); font-size: 9px; line-height: 1.8; }
+		.footer-links { display: grid; gap: 5px; }
+		.footer-links a { text-decoration: none; }
+		.footer-links a:hover { color: var(--rose-600); }
+		.footer-bottom { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--rose-200); color: var(--muted); font-size: 8px; }
+		
+        #img1 { background-image: url('OR-img.jpg'); }
+
+        @media (max-width: 767.98px) {
+			.hero { padding: 42px 0; }
+			.hero-image { min-height: 300px; }
+			.section, .access-section { padding: 48px 0; }
+			.exam-intro { align-items: flex-start; flex-direction: column; gap: 12px; }
+			.exam-banner { align-items: flex-start; flex-direction: column; }
+			.step-card { min-height: 0; }
+			.navbar-collapse { padding: 12px 0 4px; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+		}
+	</style>
 </head>
 <body>
-  <!-- Cabeçalho e navegação principal -->
-  <header class="topbar">
-    <div class="wrap nav">
-      <a class="brand" href="#inicio">
-        <span class="ribbon"></span>
-        <span>
-          Outubro Rosa
-          <small>cuidar é um ato de amor</small>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#campanha">A campanha</a>
-        <a href="#sinais">Sinais</a>
-        <a href="#prevencao">Prevenção</a>
-        <a href="#duvidas">Dúvidas</a>
-      </nav>
-      <a class="help" href="#atendimento">Encontrar atendimento</a>
-    </div>
-  </header>
+	<header class="site-header sticky-top">
+		<nav class="navbar navbar-expand-lg container py-3" aria-label="Navegação principal">
+			<a class="navbar-brand" href="#inicio">Outubro Rosa<span class="brand-caption">Conscientização e cuidado</span></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegação"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav mx-auto gap-lg-3">
+					<li class="nav-item"><a class="nav-link" href="#prevencao">Prevenção</a></li>
+					<li class="nav-item"><a class="nav-link" href="#sinais">Sinais de atenção</a></li>
+					<li class="nav-item"><a class="nav-link" href="#autoexame">Autoexame</a></li>
+					<li class="nav-item"><a class="nav-link" href="#mitos">Mitos e verdades</a></li>
+					<li class="nav-item"><a class="nav-link" href="#ajuda">Onde buscar ajuda</a></li>
+				</ul>
+				<a class="btn-green" href="#ajuda"><i class="bi bi-geo-alt"></i> Encontre atendimento</a>
+			</div>
+		</nav>
+	</header>
 
-  <main>
-    <!-- Seção inicial com chamada principal e estatísticas -->
-    <section class="hero" id="inicio">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Campanha Nacional de Conscientização</span>
-          <h1>Um toque de cuidado que <em>salva vidas.</em></h1>
-          <p class="hero-copy">
-            O Outubro Rosa é um movimento de acolhimento e conscientização sobre o câncer de mama e do colo do útero. Quanto mais cedo descoberto e tratado, maiores são as chances de cura.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#prevencao">Conheça a prevenção</a>
-            <a class="btn btn-light" href="#atendimento">Buscar ajuda gratuita</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>95%</strong>
-              <span>dos casos têm chance de cura quando descobertos cedo.</span>
-            </div>
-            <div class="stat">
-              <strong>50+ mil</strong>
-              <span>novos casos de câncer de mama por ano.</span>
-            </div>
-            <div class="stat">
-              <strong>1 em 8</strong>
-              <span>mulheres pode desenvolver a doença.</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-photo">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="Mulher sorrindo usando uma blusa rosa">
-          <div class="photo-note">
-            <b>Informação também é cuidado</b>
-            <span>Faça seus exames e incentive quem você ama.</span>
-          </div>
-        </div>
-      </div>
-    </section>
+	<main>
+		<section class="hero" id="inicio">
+			<div class="container">
+				<div class="row align-items-center g-3 g-lg-5">
+					<div class="col-lg-7">
+						<span class="eyebrow">Câncer de mama: informação que acolhe</span>
+						<h1>Um toque de cuidado que <em>salva vidas.</em></h1>
+						<p class="body-copy">O Outubro Rosa é um convite para falar sobre prevenção e autocuidado com carinho e informação de qualidade. Quanto mais descobrimos em conjunto, maiores são as chances de agir cedo e cuidar de quem amamos.</p>
+						<div class="hero-actions">
+							<a class="btn-rose" href="#prevencao"><i class="bi bi-heart-pulse"></i> Conheça a prevenção</a>
+							<a class="btn-green" href="#ajuda"><i class="bi bi-geo-alt"></i> Busque apoio</a>
+						</div>
+						<div class="stats-row" aria-label="Informações importantes">
+							  <div class="stat"><strong>Perceba</strong><span>mudanças no seu corpo e procure orientação profissional</span></div>
+							  <div class="stat"><strong>Converse</strong><span>com a equipe de saúde sobre seu histórico e suas dúvidas</span></div>
+							  <div class="stat"><strong>Conte com o SUS</strong><span>para acolhimento, avaliação e encaminhamento</span></div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div id="img1" class="hero-image image-slot" role="img" aria-label="Espaço reservado para fotografia de acolhimento">
+							<div class="image-note">
+                                <i class="bi bi-heart-pulse">
+                                </i><div><strong>Cuidado também é prevenção</strong><span>Informação para cuidar de você, todos os dias.</span></div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção sobre a campanha e os pilares do cuidado -->
-    <section class="section" id="campanha">
-      <div class="wrap intro-grid">
-        <div class="section-heading">
-          <span class="eyebrow">A força da informação</span>
-          <h2>Mais que um mês, uma cultura de <em>cuidado.</em></h2>
-          <p>Informação acessível pode transformar dúvidas em decisões e aproximar mulheres de uma rede de apoio, prevenção e tratamento.</p>
-          <div class="tip">Conhecer o próprio corpo é o primeiro passo para cuidar dele. Fale com uma profissional de saúde.</div>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="icon">♡</div>
-            <h3>Autocuidado</h3>
-            <p>Reserve um tempo para observar seu corpo e reconhecer o que é normal para você.</p>
-          </article>
-          <article class="card">
-            <div class="icon">＋</div>
-            <h3>Consulta regular</h3>
-            <p>Mantenha seus exames em dia e tire suas dúvidas com uma equipe de saúde.</p>
-          </article>
-          <article class="card">
-            <div class="icon">✦</div>
-            <h3>Acolhimento</h3>
-            <p>Nenhuma pergunta é pequena quando falamos sobre saúde e bem-estar.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+		<section class="section section-tint" id="prevencao">
+			<div class="prevention-carousel-layer" aria-hidden="true">
+				<div id="preventionCarousel" class="carousel slide carousel-fade prevention-carousel" data-bs-ride="carousel" data-bs-interval="7000" data-bs-pause="false" data-bs-touch="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="OR1.jpg" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="OR2.jpg" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="OR3.jpg" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="OR4.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="section-intro">
+					<span class="eyebrow">Prevenção começa com informação</span>
+					<h2>Mais que um mês, uma<br class="d-none d-md-block"> cultura de <em>escuta do corpo.</em></h2>
+					<p class="body-copy">Hábitos saudáveis e acompanhamento profissional ajudam a cuidar da saúde. Conhecer o próprio corpo não substitui exames, mas ajuda você a perceber mudanças e conversar com um profissional.</p>
+				</div>
+				<div class="row g-3">
+					<div class="col-md-4"><article class="topic-card"><div class="icon-box"><i class="bi bi-calendar2-heart"></i></div><h3>Autocuidado diário</h3><p>Alimentação equilibrada, movimento e atenção à saúde fazem parte de uma rotina de cuidado possível e gentil.</p><span class="card-kicker">Pequenos passos</span></article></div>
+					<div class="col-md-4"><article class="topic-card"><div class="icon-box green"><i class="bi bi-chat-heart"></i></div><h3>Consulta regular</h3><p>Acompanhe sua saúde com profissionais e converse sobre histórico familiar, dúvidas ou qualquer mudança percebida.</p><span class="card-kicker">Converse com alguém</span></article></div>
+					<div class="col-md-4"><article class="topic-card"><div class="icon-box"><i class="bi bi-clipboard2-pulse"></i></div><h3>Acolhimento e informação</h3><p>Fontes confiáveis ajudam a tomar decisões com tranquilidade, sem medo e sem desinformação.</p><span class="card-kicker">Informação importa</span></article></div>
+				</div>
+				<div class="callout"><i class="bi bi-info-circle"></i><p><strong>Sobre a mamografia:</strong> a recomendação pode variar conforme idade, histórico e diretrizes locais. Converse com a equipe de saúde para entender o cuidado mais adequado para você.</p></div>
+			</div>
+		</section>
 
-    <!-- Seção com sinais que merecem atenção -->
-    <section class="section alt" id="sinais">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Atenção aos sinais</span>
-          <h2>O que observar no seu dia a dia</h2>
-          <p>Conhecer o próprio corpo é importante. Ao perceber alguma mudança, procure um serviço de saúde.</p>
-        </div>
-        <div class="signs">
-          <article class="sign">
-            <small>01</small>
-            <b>Nódulo ou caroço fixo</b>
-            <p>Alterações persistentes na mama, mesmo sem dor, merecem avaliação.</p>
-          </article>
-          <article class="sign">
-            <small>02</small>
-            <b>Aspecto de casca de laranja</b>
-            <p>Observe mudanças na textura, formato ou tamanho da pele.</p>
-          </article>
-          <article class="sign">
-            <small>03</small>
-            <b>Modificação no mamilo</b>
-            <p>Inversão recente, feridas ou secreção devem ser investigadas.</p>
-          </article>
-          <article class="sign">
-            <small>04</small>
-            <b>Secreção espontânea</b>
-            <p>Qualquer secreção inesperada precisa ser comunicada ao médico.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+		<section class="section" id="sinais">
+			<div class="container">
+				<div class="section-intro">
+					<span class="eyebrow">Atenção aos sinais</span>
+					<h2>O que observar no seu dia a dia</h2>
+					<p class="body-copy">A percepção de mudanças no corpo é importante. Nem toda alteração significa câncer, mas vale buscar avaliação profissional se algo parecer diferente ou persistir.</p>
+				</div>
+				<div class="row g-3">
+					<div class="col-6 col-lg-3"><article class="symptom-card"><div class="icon-box"><i class="bi bi-circle"></i></div><h3>Nódulo ou caroço fixo</h3><p>Um nódulo novo, endurecido ou que não desaparece deve ser avaliado por um profissional.</p></article></div>
+					<div class="col-6 col-lg-3"><article class="symptom-card"><div class="icon-box green"><i class="bi bi-droplet"></i></div><h3>Aspecto da pele</h3><p>Observe retrações, vermelhidão persistente, textura diferente ou mudanças na região da mama.</p></article></div>
+					<div class="col-6 col-lg-3"><article class="symptom-card"><div class="icon-box"><i class="bi bi-bandaid"></i></div><h3>Modificações no mamilo</h3><p>Inversão recente, ferida que não cicatriza ou secreção espontânea merecem atenção.</p></article></div>
+					<div class="col-6 col-lg-3"><article class="symptom-card"><div class="icon-box green"><i class="bi bi-arrows-angle-expand"></i></div><h3>Secreção espontânea</h3><p>Procure orientação diante de secreção fora do período de amamentação, especialmente com sangue.</p></article></div>
+				</div>
+				<p class="notice-line mt-3"><i class="bi bi-heart"></i> Se notar uma mudança, procure uma unidade de saúde. Só um profissional pode avaliar o que está acontecendo.</p>
+			</div>
+		</section>
 
-    <!-- Seção com orientações para o autoexame -->
-    <section class="section" id="prevencao">
-      <div class="wrap">
-        <div class="quote">
-          <div>
-            <span>Uma mensagem importante</span>
-            <p>“O autocuidado não substitui a mamografia, mas é o primeiro passo para conhecer o próprio corpo.”</p>
-          </div>
-          <div>
-            <span>Autora</span>
-            <b>Equipe Outubro Rosa</b>
-            <span>Informação para todas.</span>
-          </div>
-        </div>
-        <div class="section-heading">
-          <span class="eyebrow">Passo a passo</span>
-          <h2>Como realizar o autoexame mensal</h2>
-          <p>Escolha um momento tranquilo e observe seu corpo. O autoexame não substitui a consulta, mas ajuda você a conhecer suas mamas.</p>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="icon">1</div>
-            <h3>Em frente ao espelho</h3>
-            <p>Observe com os braços abaixados e levantados se existe alguma alteração visível.</p>
-          </article>
-          <article class="card">
-            <div class="icon">2</div>
-            <h3>No banho, ensaboada</h3>
-            <p>Com a ponta dos dedos, faça movimentos circulares suaves em toda a mama.</p>
-          </article>
-          <article class="card">
-            <div class="icon">3</div>
-            <h3>Deitada na cama</h3>
-            <p>Repita o toque deitada e compare os dois lados, sem apertar com força.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+		<section class="exam-section" id="autoexame">
+			<div class="container">
+				<div class="exam-intro">
+					  <div><span class="eyebrow">Reconheça seu corpo</span><h2>Conheça seu corpo com gentileza</h2><p class="body-copy">Não é preciso seguir um roteiro mensal. Perceber como seu corpo costuma ser pode ajudar a notar mudanças; isso não substitui consultas ou exames recomendados por um profissional.</p></div>
+					<a class="btn-soft" href="#ajuda"><i class="bi bi-question-circle"></i> Tire suas dúvidas</a>
+				</div>
+				<div class="row g-3">
+					  <div class="col-md-4"><article class="step-card"><span class="step-number">1</span><h3>No espelho</h3><p>Na rotina, você pode notar mudanças na aparência das mamas, da pele ou dos mamilos.</p><span class="step-foot"><i class="bi bi-check-circle"></i> Perceba sem se cobrar</span></article></div>
+					  <div class="col-md-4"><article class="step-card"><span class="step-number">2</span><h3>Durante o cuidado diário</h3><p>Esteja atenta a algo novo ou persistente. Não é necessário apertar com força nem seguir uma técnica específica.</p><span class="step-foot"><i class="bi bi-check-circle"></i> Cada corpo tem seu padrão</span></article></div>
+					  <div class="col-md-4"><article class="step-card"><span class="step-number">3</span><h3>Se notar uma mudança</h3><p>Procure uma unidade de saúde para conversar com um profissional, mesmo que não sinta dor.</p><span class="step-foot"><i class="bi bi-check-circle"></i> Você merece acolhimento</span></article></div>
+				</div>
+				<div class="exam-banner"><div class="exam-banner-copy"><i class="bi bi-hospital"></i><div><strong>Quando solicitar a mamografia no SUS?</strong><span>Converse com a equipe da unidade de saúde sobre as recomendações para o seu caso.</span></div></div><a class="btn-rose" href="#ajuda">Encontre atendimento <i class="bi bi-arrow-right"></i></a></div>
+			</div>
+		</section>
 
-    <!-- Seção de perguntas frequentes -->
-    <section class="section alt" id="duvidas">
-      <div class="wrap">
-        <div class="section-heading" style="text-align: center; margin-left: auto; margin-right: auto">
-          <span class="eyebrow">Mitos e verdades</span>
-          <h2>Informação que <em>protege.</em></h2>
-          <p>Esclareça dúvidas comuns e compartilhe informação confiável.</p>
-        </div>
-        <div class="faq-grid">
-          <details open>
-            <summary>“Todo câncer de mama causa dor intensa?”</summary>
-            <p>Mito. No início, o câncer de mama pode não causar dor. Por isso, os exames de rotina e o conhecimento do próprio corpo são tão importantes.</p>
-          </details>
-          <details>
-            <summary>“Amamentar auxilia na prevenção do câncer de mama?”</summary>
-            <p>Verdade. A amamentação pode contribuir para reduzir o risco, embora não substitua os cuidados preventivos.</p>
-          </details>
-          <details>
-            <summary>“Usar desodorante antitranspirante provoca câncer?”</summary>
-            <p>Mito. Não há evidências científicas de que desodorantes causem câncer de mama.</p>
-          </details>
-          <details>
-            <summary>“Homens também podem desenvolver câncer de mama?”</summary>
-            <p>Verdade. É raro, mas homens também podem ter câncer de mama e devem procurar avaliação diante de alterações.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+		<section class="section section-white" id="mitos">
+			<div class="container">
+				<div class="section-intro mx-auto text-center">
+					<span class="eyebrow">Informação sem medo</span>
+					<h2>Mitos e verdades sobre a doença</h2>
+					<p class="body-copy mx-auto">Informação de qualidade ajuda a combater boatos e permite conversas mais conscientes com profissionais de saúde.</p>
+				</div>
+				<div class="row g-3">
+					<div class="col-md-6"><article class="myth-card"><span class="tag">Mito</span><h3>“Todo câncer de mama causa dor intensa”</h3><p>Muitas vezes, o câncer de mama não causa dor no início. Por isso, conhecer o corpo e manter o acompanhamento de saúde é importante.</p><span class="myth-source"><i class="bi bi-arrow-repeat"></i> Mudanças merecem avaliação</span></article></div>
+					<div class="col-md-6"><article class="myth-card"><span class="tag true">Verdade</span><h3>“Amamentar auxilia na prevenção do câncer de mama?”</h3><p>Estudos indicam que amamentar pode reduzir o risco, mas não elimina a possibilidade de desenvolver a doença.</p><span class="myth-source"><i class="bi bi-check-circle"></i> Cada história de saúde é única</span></article></div>
+					<div class="col-md-6"><article class="myth-card"><span class="tag">Mito</span><h3>“Usar desodorante antitranspirante obstrui os poros e gera tumores?”</h3><p>Não há evidências científicas confiáveis que comprovem essa relação. Converse com um profissional se tiver dúvidas.</p><span class="myth-source"><i class="bi bi-arrow-repeat"></i> Desconfie de soluções milagrosas</span></article></div>
+					<div class="col-md-6"><article class="myth-card"><span class="tag true">Verdade</span><h3>“Homens também podem desenvolver câncer de mama?”</h3><p>Sim. Embora seja menos comum, homens também podem desenvolver a doença. Mudanças no peito devem ser avaliadas.</p><span class="myth-source"><i class="bi bi-check-circle"></i> Informação para todas as pessoas</span></article></div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Seção para encontrar atendimento no SUS -->
-    <section class="section" id="atendimento">
-      <div class="wrap service">
-        <div>
-          <span class="eyebrow">Fortalecer redes</span>
-          <h2>O Sistema Único de Saúde é seu aliado integral</h2>
-          <p class="hero-copy">O SUS oferece atendimento gratuito para prevenção, diagnóstico e tratamento do câncer de mama e do colo do útero.</p>
-          <div class="service-list">
-            <div class="service-item">
-              <span>✓</span>
-              <div><b>Passo a passo para o cuidado</b>Encontre orientações para cada etapa da sua jornada.</div>
-            </div>
-            <div class="service-item">
-              <span>✓</span>
-              <div><b>Atenção perto de você</b>Procure a unidade básica de saúde do seu bairro.</div>
-            </div>
-          </div>
-        </div>
-        <div class="search-box">
-          <h3>Encontre a sua Unidade de Atendimento</h3>
-          <p>Digite seu endereço para localizar o serviço mais próximo.</p>
-          <div class="search">
-            <input aria-label="Seu endereço" placeholder="Digite seu CEP ou endereço">
-            <button type="button" onclick="this.textContent='Buscando...'">Localizar</button>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="access-section" id="ajuda">
+			<div class="container">
+				<div class="row g-3 align-items-stretch">
+					<div class="col-lg-5">
+						<div class="section-intro mb-3"><span class="eyebrow">Portas de entrada</span><h2>O Sistema Único de Saúde está ao seu lado</h2><p class="body-copy">Todas as unidades básicas de saúde podem orientar você. A equipe acolhe suas dúvidas, avalia mudanças percebidas e encaminha para os próximos passos necessários.</p></div>
+						<div class="resource-card">
+							<h3><i class="bi bi-pin-map text-success me-2"></i>Passos para buscar cuidado</h3>
+							<ul class="resource-list">
+								<li><i class="bi bi-check-circle"></i><span>Procure a unidade de saúde mais próxima.</span></li>
+								<li><i class="bi bi-check-circle"></i><span>Converse com a equipe sobre sua saúde e histórico familiar.</span></li>
+								<li><i class="bi bi-check-circle"></i><span>Siga as orientações e os encaminhamentos recebidos.</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6"><article class="resource-card"><div class="icon-box green"><i class="bi bi-geo-alt"></i></div><h3>Disque Saúde 136</h3><p>Informações sobre serviços do SUS e orientações para encontrar atendimento na sua região.</p><a href="tel:136">Ligue gratuitamente <i class="bi bi-arrow-up-right"></i></a></article></div>
+					<div class="col-lg-4 col-sm-6"><article class="resource-card"><div class="icon-box"><i class="bi bi-hospital"></i></div><h3>INCA e Rede de Apoio</h3><p>Consulte fontes confiáveis para saber mais sobre prevenção, diagnóstico e tratamento do câncer.</p><a href="https://www.gov.br/inca/pt-br" target="_blank" rel="noreferrer">Acesse o portal do INCA <i class="bi bi-arrow-up-right"></i></a></article></div>
+					<div class="col-lg-7">
+						<div class="clinic-panel">
+							<span class="eyebrow">Encontre acolhimento</span>
+							<h3>Encontre a sua Unidade de Atendimento</h3>
+							  <p>Informe seu CEP para abrir uma busca por unidades de saúde próximas no mapa. Confirme os serviços disponíveis com a sua prefeitura.</p>
+							<form class="clinic-form" id="cepForm" novalidate>
+								<label class="visually-hidden" for="cepInput">CEP</label>
+								<input class="form-control" id="cepInput" name="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="Digite seu CEP (ex.: 00000-000)" required>
+								<button class="btn" type="submit"><i class="bi bi-search"></i> Buscar</button>
+							</form>
+							<div class="form-feedback" id="cepFeedback" role="status" aria-live="polite"></div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="resource-card h-100"><div class="icon-box"><i class="bi bi-people"></i></div><h3>Você não precisa passar por isso sozinha</h3><p>Converse com pessoas de confiança e procure apoio profissional. Acolhimento também faz parte do cuidado.</p><a href="tel:136">Fale com o SUS pelo 136 <i class="bi bi-arrow-up-right"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Mensagem final de compartilhamento -->
-    <section class="closing">
-      <div class="wrap">
-        <span class="eyebrow">Cuidado compartilhado</span>
-        <h2>Cuidar de você é um ato de coragem, partilha e <em>vida.</em></h2>
-        <p>Não adie seu cuidado. Converse hoje com uma mulher que você ama e divida informação, apoio e acolhimento.</p>
-        <a class="btn btn-primary" href="#inicio">Compartilhar esta mensagem</a>
-      </div>
-    </section>
-  </main>
+		<section class="closing">
+			<div class="container">
+				<div class="icon-box"><i class="bi bi-heart-fill"></i></div>
+				<h2>Cuidar de você é um ato de coragem, partilha e vida.</h2>
+				<p>Não deixe as suas dúvidas para depois. Converse com alguém de confiança, procure orientação profissional e lembre-se: você merece cuidado em todas as fases da vida.</p>
+				<a class="btn-soft" href="#inicio"><i class="bi bi-arrow-up"></i> Voltar ao início</a>
+			</div>
+		</section>
+	</main>
 
-  <!-- Rodapé com navegação e canais de ajuda -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h3>Outubro Rosa</h3>
-          <p>Uma rede de acolhimento e informação para que ninguém caminhe sozinha na busca por saúde e bem-estar.</p>
-        </div>
-        <div>
-          <b>Navegação</b>
-          <a href="#campanha">A campanha</a>
-          <a href="#sinais">Sinais</a>
-          <a href="#prevencao">Prevenção</a>
-          <a href="#duvidas">Perguntas frequentes</a>
-        </div>
-        <div>
-          <b>Canais oficiais de ajuda</b>
-          <p>Disque Saúde: 136</p>
-          <p>Procure uma Unidade Básica de Saúde.</p>
-        </div>
-      </div>
-      <div class="copyright">© 2026 Outubro Rosa · Informação e cuidado para todas.</div>
-    </div>
-  </footer>
+	<footer>
+		<div class="container">
+			<div class="row g-4">
+				<div class="col-md-5"><div class="footer-title">Outubro Rosa</div><p class="footer-copy">Um espaço acolhedor de informação e cuidado. Informação de qualidade aproxima, fortalece e ajuda a construir escolhas mais conscientes.</p></div>
+				<div class="col-md-3"><strong class="d-block mb-2" style="font-size:9px">NAVEGAÇÃO</strong><nav class="footer-links" aria-label="Navegação do rodapé"><a href="#prevencao">Prevenção</a><a href="#sinais">Sinais de atenção</a><a href="#autoexame">Autoexame</a><a href="#mitos">Mitos e verdades</a></nav></div>
+				<div class="col-md-4"><strong class="d-block mb-2" style="font-size:9px">CANAIS OFICIAIS DE AJUDA</strong><div class="footer-links"><a href="tel:136"><i class="bi bi-telephone text-success me-1"></i> Disque Saúde 136</a><a href="https://www.gov.br/inca/pt-br" target="_blank" rel="noreferrer"><i class="bi bi-heart text-danger me-1"></i> Instituto Nacional de Câncer (INCA)</a></div></div>
+			</div>
+			<div class="footer-bottom d-flex flex-wrap justify-content-between gap-2"><span>Informação e acolhimento caminham juntos.</span><span>Este conteúdo é educativo e não substitui orientação profissional.</span></div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		const cepForm = document.querySelector("#cepForm");
+		const cepInput = document.querySelector("#cepInput");
+		const cepFeedback = document.querySelector("#cepFeedback");
+
+		cepInput.addEventListener("input", () => {
+			const digits = cepInput.value.replace(/\D/g, "").slice(0, 8);
+			cepInput.value = digits.length > 5 ? `${digits.slice(0, 5)}-${digits.slice(5)}` : digits;
+		});
+
+		cepForm.addEventListener("submit", async (event) => {
+			event.preventDefault();
+			const digits = cepInput.value.replace(/\D/g, "");
+
+			if (digits.length !== 8) {
+				cepFeedback.textContent = "Digite um CEP válido com 8 números.";
+				cepInput.focus();
+				return;
+			}
+
+			cepFeedback.textContent = "Consultando CEP...";
+
+			try {
+				const response = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
+				if (!response.ok) throw new Error("Falha na consulta de CEP");
+				const address = await response.json();
+				if (address.erro) {
+					cepFeedback.textContent = "CEP não encontrado. Confira os números ou ligue para o Disque Saúde 136.";
+					return;
+				}
+
+				const location = [address.logradouro, address.bairro, address.localidade, address.uf, "unidade de saúde"].filter(Boolean).join(", ");
+				const message = document.createElement("span");
+				message.textContent = `Endereço localizado em ${address.localidade}/${address.uf}. `;
+				const mapLink = document.createElement("a");
+				mapLink.href = `https://www.google.com/maps/search/${encodeURIComponent(location)}`;
+				mapLink.target = "_blank";
+				mapLink.rel = "noreferrer";
+				mapLink.className = "link-light fw-bold";
+				mapLink.textContent = "Buscar unidades no mapa";
+				cepFeedback.replaceChildren(message, mapLink);
+			} catch {
+				cepFeedback.textContent = "Não foi possível consultar o CEP agora. Ligue para o Disque Saúde 136 ou procure a prefeitura da sua cidade.";
+			}
+		});
+	</script>
 </body>
 </html>
